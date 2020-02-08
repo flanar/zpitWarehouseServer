@@ -44,5 +44,11 @@ class MembersTableSeeder extends Seeder
             'member_surname' => 'Kapela',
             'group_id' => 4
         ]);
+
+        DB::table('members')->insert([
+            'member_name' => 'Krystian',
+            'member_surname' => 'Be',
+            'group_id' => 5
+        ]);
     }
 }

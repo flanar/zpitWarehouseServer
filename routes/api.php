@@ -12,4 +12,5 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     Route::get('getMembers', 'MemberController@getMembers');
     Route::get('getMembersByGroup/{id}', 'MemberController@getMembersByGroup');
+    Route::post('members', 'MemberController@addNewMember');
 });

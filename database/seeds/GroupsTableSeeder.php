@@ -26,5 +26,9 @@ class GroupsTableSeeder extends Seeder
         DB::table('groups')->insert([
             'group_name' => 'kapela'
         ]);
+
+        DB::table('groups')->insert([
+            'group_name' => '"Be"'
+        ]);
     }
 }

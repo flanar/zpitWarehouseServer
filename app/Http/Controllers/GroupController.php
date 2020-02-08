@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Groups;
+use App\Group;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
     public function getGroups()
     {
-        $groups = Groups::all();
+        $groups = Group::all();
 
         return response()->json(compact('groups')); 
     }

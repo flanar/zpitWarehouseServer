@@ -2,22 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Members;
+use App\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
     public function getMembers()
     {
-        $members = Members::all();
+        $members = Member::all();
 
         return response()->json(compact('members'));
     }
 
     public function getMembersByGroup($id)
     {
-        $members = Members::where('group_id', $id)->get();
+        $members = Member::where('group_id', $id)->get();
 
         return response()->json(compact('members'));
+    }
+
+    public function addNewMember(Request $request)
+    {
+        $member_name = $request->name;
+        $member_surname = $request->surname;
+        $member_email = $request->email;
+        $group_id = $request->group;
+
+        $member = new Member;
+
+        $member->member_name = $member_name;
+        $member->member_surname = $member_surname;
+        $member->member_email = $member_email;
+        $member->group_id = $group_id;
+
+        $member->save();
     }
 }
