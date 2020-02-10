@@ -21,6 +21,7 @@ class CreateMembersTable extends Migration
             $table->bigInteger('group_id')->nullable(false);
             $table->foreign('group_id')->references('group_id')->on('groups');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

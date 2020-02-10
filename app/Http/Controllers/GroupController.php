@@ -9,7 +9,7 @@ class GroupController extends Controller
 {
     public function getGroups()
     {
-        $groups = Group::all();
+        $groups = Group::orderBy('group_id', 'asc')->get();
 
         return response()->json(compact('groups')); 
     }

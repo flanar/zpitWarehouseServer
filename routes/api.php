@@ -13,4 +13,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('getMembers', 'MemberController@getMembers');
     Route::get('getMembersByGroup/{id}', 'MemberController@getMembersByGroup');
     Route::post('members', 'MemberController@addNewMember');
+    Route::put('members/{id}', 'MemberController@editMember');
+    Route::delete('members/{id}', 'MemberController@deleteMember');
 });
